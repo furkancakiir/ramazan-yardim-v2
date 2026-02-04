@@ -216,7 +216,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <p className="text-center text-gray-600 text-sm mt-6">
-          © 2024 Ramazan Yardımı Yönetim Sistemi
+          Ramazan Yardımı Yönetim Sistemi 
         </p>
       </div>
     </div>
