@@ -72,9 +72,11 @@ export function YardimKayitForm({ mahalleId, mahalleName }: YardimKayitFormProps
       newErrors.adres = 'Adres en az 10 karakter olmalıdır'
     }
 
-    if (formData.telefon.trim() && !/^[0-9()\s\-+]{10,}$/.test(formData.telefon)) {
-      newErrors.telefon = 'Geçerli bir telefon numarası giriniz'
-    }
+    if (!formData.telefon.trim()) {
+  newErrors.telefon = 'Telefon numarası zorunludur';
+} else if (!/^[0-9()\s\-+]{10,}$/.test(formData.telefon)) {
+  newErrors.telefon = 'Geçerli bir telefon numarası giriniz (en az 10 hane)';
+}
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -257,7 +259,7 @@ export function YardimKayitForm({ mahalleId, mahalleName }: YardimKayitFormProps
         {/* Telefon */}
         <div>
           <label htmlFor="telefon" className="block text-sm font-medium text-gray-700 mb-2">
-            Telefon <span className="text-gray-400">(Opsiyonel)</span>
+            Telefon <span className="text-gray-400">*</span>
           </label>
           <input
             id="telefon"
