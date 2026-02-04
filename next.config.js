@@ -4,10 +4,7 @@ const nextConfig = {
     // TypeScript hataları olsa bile build işlemini tamamla
     ignoreBuildErrors: true,
   },
-  eslint: {
-    // ESLint hataları olsa bile build işlemini tamamla
-    ignoreDuringBuilds: true,
-  },
+  // 'eslint' bloğunu SİLDİK çünkü hataya sebep oluyor
 }
 
 module.exports = nextConfig
